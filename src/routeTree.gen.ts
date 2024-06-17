@@ -11,12 +11,18 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as routeImport } from './routes/__route'
+import { Route as IndexImport } from './routes/index'
+import { Route as MyAccountsIndexImport } from './routes/MyAccounts/index'
 
 // Create/Update Routes
 
-const routeRoute = routeImport.update({
-  id: '/__route',
+const IndexRoute = IndexImport.update({
+  path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const MyAccountsIndexRoute = MyAccountsIndexImport.update({
+  path: '/MyAccounts/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -24,11 +30,18 @@ const routeRoute = routeImport.update({
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/__route': {
-      id: '/__route'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: typeof routeImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/MyAccounts/': {
+      id: '/MyAccounts/'
+      path: '/MyAccounts'
+      fullPath: '/MyAccounts'
+      preLoaderRoute: typeof MyAccountsIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -36,7 +49,10 @@ declare module '@tanstack/react-router' {
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren({})
+export const routeTree = rootRoute.addChildren({
+  IndexRoute,
+  MyAccountsIndexRoute,
+})
 
 /* prettier-ignore-end */
 
@@ -44,12 +60,17 @@ export const routeTree = rootRoute.addChildren({})
 {
   "routes": {
     "__root__": {
+      "filePath": "__root.tsx",
       "children": [
-        "/__route"
+        "/",
+        "/MyAccounts/"
       ]
     },
-    "/__route": {
-      "filePath": "__route.tsx"
+    "/": {
+      "filePath": "index.tsx"
+    },
+    "/MyAccounts/": {
+      "filePath": "MyAccounts/index.tsx"
     }
   }
 }
