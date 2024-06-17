@@ -1,6 +1,7 @@
 
 import List from "./list"
-import Module from "./Module"
+import { Outlet } from "@tanstack/react-router"
+
 function App() {
   
 
@@ -62,7 +63,7 @@ function App() {
 
 <List />
 
-<Module />
+<Outlet />
 
 </div>
   )

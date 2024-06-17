@@ -2,12 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
+import { RouterProvider, createRouter } from "@tanstack/react-router";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+import { routeTree } from "./routeTree.gen.ts";
+
+const router = createRouter({ routeTree });
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <RouterProvider router={router} />
+);
 
 // Use contextBridge
 window.ipcRenderer.on('main-process-message', (_event, message) => {
