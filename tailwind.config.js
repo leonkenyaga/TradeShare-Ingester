@@ -5,7 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        TradeShareblue: '#0098FF',
+        TradeSharegray: '#444444',
+        TradeShareblack: '#252526',
+      },
+    },
   },
   plugins: [],
 }
