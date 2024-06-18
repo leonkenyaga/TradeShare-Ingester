@@ -12,7 +12,12 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
+import { Route as SigninIndexImport } from './routes/Signin/index'
+import { Route as SignUpIndexImport } from './routes/SignUp/index'
 import { Route as MyAccountsIndexImport } from './routes/MyAccounts/index'
+import { Route as FollowingIndexImport } from './routes/Following/index'
+import { Route as AddAccountIndexImport } from './routes/AddAccount/index'
+import { Route as InboxIndexImport } from './routes/Inbox/Index'
 
 // Create/Update Routes
 
@@ -21,8 +26,33 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const SigninIndexRoute = SigninIndexImport.update({
+  path: '/Signin/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const SignUpIndexRoute = SignUpIndexImport.update({
+  path: '/SignUp/',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const MyAccountsIndexRoute = MyAccountsIndexImport.update({
   path: '/MyAccounts/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FollowingIndexRoute = FollowingIndexImport.update({
+  path: '/Following/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AddAccountIndexRoute = AddAccountIndexImport.update({
+  path: '/AddAccount/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const InboxIndexRoute = InboxIndexImport.update({
+  path: '/Inbox/Index',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -37,11 +67,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/Inbox/Index': {
+      id: '/Inbox/Index'
+      path: '/Inbox/Index'
+      fullPath: '/Inbox/Index'
+      preLoaderRoute: typeof InboxIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/AddAccount/': {
+      id: '/AddAccount/'
+      path: '/AddAccount'
+      fullPath: '/AddAccount'
+      preLoaderRoute: typeof AddAccountIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/Following/': {
+      id: '/Following/'
+      path: '/Following'
+      fullPath: '/Following'
+      preLoaderRoute: typeof FollowingIndexImport
+      parentRoute: typeof rootRoute
+    }
     '/MyAccounts/': {
       id: '/MyAccounts/'
       path: '/MyAccounts'
       fullPath: '/MyAccounts'
       preLoaderRoute: typeof MyAccountsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/SignUp/': {
+      id: '/SignUp/'
+      path: '/SignUp'
+      fullPath: '/SignUp'
+      preLoaderRoute: typeof SignUpIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/Signin/': {
+      id: '/Signin/'
+      path: '/Signin'
+      fullPath: '/Signin'
+      preLoaderRoute: typeof SigninIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -51,7 +116,12 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren({
   IndexRoute,
+  InboxIndexRoute,
+  AddAccountIndexRoute,
+  FollowingIndexRoute,
   MyAccountsIndexRoute,
+  SignUpIndexRoute,
+  SigninIndexRoute,
 })
 
 /* prettier-ignore-end */
@@ -63,14 +133,34 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/MyAccounts/"
+        "/Inbox/Index",
+        "/AddAccount/",
+        "/Following/",
+        "/MyAccounts/",
+        "/SignUp/",
+        "/Signin/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
+    "/Inbox/Index": {
+      "filePath": "Inbox/Index.tsx"
+    },
+    "/AddAccount/": {
+      "filePath": "AddAccount/index.tsx"
+    },
+    "/Following/": {
+      "filePath": "Following/index.tsx"
+    },
     "/MyAccounts/": {
       "filePath": "MyAccounts/index.tsx"
+    },
+    "/SignUp/": {
+      "filePath": "SignUp/index.tsx"
+    },
+    "/Signin/": {
+      "filePath": "Signin/index.tsx"
     }
   }
 }
