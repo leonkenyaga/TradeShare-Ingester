@@ -1,16 +1,27 @@
 import { useState, useEffect, useRef } from "react";
 
+
+
+const [minWidth, maxWidth, defaultWidth] = [200, 500, 350];
+
 export default function Sidebar() {
-  const [width, setWidth] = useState(450);
+  const [width, setWidth] = useState(defaultWidth);
   const isResized = useRef(false);
 
+  
   useEffect(() => {
     window.addEventListener("mousemove", (e) => {
       if (!isResized.current) {
         return;
       }
+      
+      setWidth((previousWidth) => {
+        const newWidth = previousWidth + e.movementX/2000 ;
 
-      setWidth((previousWidth) => previousWidth + e.movementX);
+        const isWidthInRange = newWidth >= minWidth && newWidth <= maxWidth;
+    
+        return isWidthInRange ? newWidth : previousWidth;
+      });
     });
 
     window.addEventListener("mouseup", () => {
@@ -20,15 +31,16 @@ export default function Sidebar() {
 
   return (
     <div className="flex bg-green-500">
-      <div style={{ width: `${width / 16}rem` }}>Sidebar</div>
+      <div style={{ width: `${width/16}rem` }}>Sidebar</div>
 
       {/* Handle */}
       <div
-        className="w-4 cursor-col-resize bg-blue-500"
+        className="w-1 cursor-ew-resize bg-blue-500"
         onMouseDown={() => {
           isResized.current = true;
         }}
       />
+      
     </div>
   );
 }
