@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mui/base": "^5.0.0-beta.40",
+    "@mui/system": "^5.15.20",
     "@tanstack/react-router": "^1.38.1",
     "@tanstack/router-vite-plugin": "^1.38.0",
     "react": "^18.2.0",
