@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import Module from '../Module'
+import { MainModule } from '../MainModule'
 
 export const Route = createFileRoute('/')({
-  component: Module
+  component: MainModule
 })
