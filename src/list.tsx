@@ -14,15 +14,15 @@ import Settings from "./List elements/Settings";
 
 function List(){
  
-const defaultClass = "px-3 min-h-16 border-l-2 border-stone-900"
+const defaultClass = "px-3 min-h-12 border-l-2 border-stone-900"
 
- const selectedClass = " border-l-2 border-TradeShareblue px-3 min-h-16"
+ const selectedClass = " border-l-2 border-TradeShareblue px-3 min-h-12"
 
  const [selected, setSelected] = useState("Home")
 
     return(
 
-      <div className="grid grid-rows-[1fr_1fr_1fr_1fr_1fr_5fr] min-w-12 bg-stone-900 border-r-2 border-TradeSharegray">
+      <div className="grid grid-rows-[1fr_1fr_1fr_1fr_1fr_6fr] min-w-12 bg-stone-900 border-r-2 border-TradeSharegray">
       <button  value="Home" className= {selected === "Home" ? selectedClass : defaultClass} onClick={(e)=>{setSelected(e.currentTarget.value)}}> 
       <Link to="/">
      <Home />
@@ -50,7 +50,7 @@ const defaultClass = "px-3 min-h-16 border-l-2 border-stone-900"
       </Link>
       </button> 
       <div className="bg-purple-700 px-3 min-h-16 bg-stone-900 ">
-        <div className="mt-4 pt-64 ">
+        <div className="mt-4 pt-72 ">
 <Settings />
 </div>
       </div>
