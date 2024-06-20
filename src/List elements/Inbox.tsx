@@ -12,6 +12,7 @@ function Inbox(){
     const open = Boolean(anchor);
     const id = open ? 'simple-popper' : undefined;
 
+
     return (
 <div>
 <a aria-describedby={id} type="button" onMouseOver={(e)=>{setAnchor(e.currentTarget)}} onMouseOut={()=>{setAnchor(null)}} className="flex items-center text-gray-900 rounded-lg dark:text-white group">
