@@ -23,34 +23,34 @@ const defaultClass = "px-3 min-h-12 border-l-2 border-stone-900"
     return(
 
       <div className="grid grid-rows-[1fr_1fr_1fr_1fr_1fr_6fr] min-w-12 bg-stone-900 border-r-2 border-TradeSharegray">
-      <button  value="Home" className= {selected === "Home" ? selectedClass : defaultClass} onClick={(e)=>{setSelected(e.currentTarget.value)}}> 
       <Link to="/">
+      <button  value="Home" className= {selected === "Home" ? selectedClass : defaultClass} onClick={(e)=>{setSelected(e.currentTarget.value)}}> 
      <Home />
-      </Link>      
       </button> 
-
-      <button  value="MyAccounts" className= {selected === "MyAccounts" ? selectedClass : defaultClass} onClick={(e)=>{setSelected(e.currentTarget.value)}}>
+      </Link>   
       <Link to= "/MyAccounts">
+      <button  value="MyAccounts" className= {selected === "MyAccounts" ? selectedClass : defaultClass} onClick={(e)=>{setSelected(e.currentTarget.value)}}>
       <MyAccounts />
-      </Link>
       </button> 
-      <button  value="AddAccount" className= {selected === "AddAccount" ? selectedClass : defaultClass} onClick={(e)=>{setSelected(e.currentTarget.value)}}>
+      </Link>
       <Link to="/AddAccount">
+      <button  value="AddAccount" className= {selected === "AddAccount" ? selectedClass : defaultClass} onClick={(e)=>{setSelected(e.currentTarget.value)}}>
       <AddAccount />
-      </Link>
       </button> 
-      <button  value="Inbox" className= {selected === "Inbox" ? selectedClass : defaultClass} onClick={(e)=>{setSelected(e.currentTarget.value)}}> 
+      </Link>
       <Link to="/Inbox">
+      <button  value="Inbox" className= {selected === "Inbox" ? selectedClass : defaultClass} onClick={(e)=>{setSelected(e.currentTarget.value)}}>
       <Inbox />
-      </Link>
       </button> 
-      <button  value="Following" className= {selected === "Following" ? selectedClass : defaultClass} onClick={(e)=>{setSelected(e.currentTarget.value)}}>
+      </Link>
       <Link to="/Following">
+      <button  value="Following" className= {selected === "Following" ? selectedClass : defaultClass} onClick={(e)=>{setSelected(e.currentTarget.value)}}>
       <Following />
+      </button>
       </Link>
-      </button> 
-      <div className="bg-purple-700 px-3 min-h-16 bg-stone-900 ">
-        <div className="mt-4 pt-72 ">
+
+      <div className="bg-purple-700 px-3 min-h-16 bg-stone-900 relative">
+        <div className="absolute bottom-0">
 <Settings />
 </div>
       </div>
