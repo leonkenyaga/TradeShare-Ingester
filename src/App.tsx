@@ -1,6 +1,5 @@
-import List from "./Components/list";
-import { Link ,Outlet } from "@tanstack/react-router";
-import Statusbar from "./statusbar";
+import List from "./Components/List/list";
+import { Outlet } from "@tanstack/react-router";
 
 function App() {
   return (
@@ -12,15 +11,11 @@ function App() {
         </div>
       </div>
       <div className=" bg-blue-500">
-      <div className="h-full grid grid-cols-[1fr_34fr] border-t border-TradeSharegray">
-          <div className="bg-TradeShareblue min-w-16 px-2">
-           Status:
-          </div>
-          <div className="bg-black px-4">
-          Up 1%
-          </div>
+        <div className="h-full grid grid-cols-[1fr_34fr] border-t border-TradeSharegray">
+          <div className="bg-TradeShareblue min-w-16 px-2">Status:</div>
+          <div className="bg-black px-4">Up 1%</div>
         </div>
-         </div>
+      </div>
     </div>
   );
 }

@@ -15,8 +15,8 @@ import { Route as IndexImport } from './routes/index'
 import { Route as SigninIndexImport } from './routes/Signin/index'
 import { Route as SignUpIndexImport } from './routes/SignUp/index'
 import { Route as MyAccountsIndexImport } from './routes/MyAccounts/index'
+import { Route as LinkAccountIndexImport } from './routes/LinkAccount/index'
 import { Route as FollowingIndexImport } from './routes/Following/index'
-import { Route as AddAccountIndexImport } from './routes/AddAccount/index'
 import { Route as InboxIndexImport } from './routes/Inbox/Index'
 
 // Create/Update Routes
@@ -41,13 +41,13 @@ const MyAccountsIndexRoute = MyAccountsIndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const FollowingIndexRoute = FollowingIndexImport.update({
-  path: '/Following/',
+const LinkAccountIndexRoute = LinkAccountIndexImport.update({
+  path: '/LinkAccount/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const AddAccountIndexRoute = AddAccountIndexImport.update({
-  path: '/AddAccount/',
+const FollowingIndexRoute = FollowingIndexImport.update({
+  path: '/Following/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -74,18 +74,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InboxIndexImport
       parentRoute: typeof rootRoute
     }
-    '/AddAccount/': {
-      id: '/AddAccount/'
-      path: '/AddAccount'
-      fullPath: '/AddAccount'
-      preLoaderRoute: typeof AddAccountIndexImport
-      parentRoute: typeof rootRoute
-    }
     '/Following/': {
       id: '/Following/'
       path: '/Following'
       fullPath: '/Following'
       preLoaderRoute: typeof FollowingIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/LinkAccount/': {
+      id: '/LinkAccount/'
+      path: '/LinkAccount'
+      fullPath: '/LinkAccount'
+      preLoaderRoute: typeof LinkAccountIndexImport
       parentRoute: typeof rootRoute
     }
     '/MyAccounts/': {
@@ -117,8 +117,8 @@ declare module '@tanstack/react-router' {
 export const routeTree = rootRoute.addChildren({
   IndexRoute,
   InboxIndexRoute,
-  AddAccountIndexRoute,
   FollowingIndexRoute,
+  LinkAccountIndexRoute,
   MyAccountsIndexRoute,
   SignUpIndexRoute,
   SigninIndexRoute,
@@ -134,8 +134,8 @@ export const routeTree = rootRoute.addChildren({
       "children": [
         "/",
         "/Inbox/Index",
-        "/AddAccount/",
         "/Following/",
+        "/LinkAccount/",
         "/MyAccounts/",
         "/SignUp/",
         "/Signin/"
@@ -147,11 +147,11 @@ export const routeTree = rootRoute.addChildren({
     "/Inbox/Index": {
       "filePath": "Inbox/Index.tsx"
     },
-    "/AddAccount/": {
-      "filePath": "AddAccount/index.tsx"
-    },
     "/Following/": {
       "filePath": "Following/index.tsx"
+    },
+    "/LinkAccount/": {
+      "filePath": "LinkAccount/index.tsx"
     },
     "/MyAccounts/": {
       "filePath": "MyAccounts/index.tsx"
