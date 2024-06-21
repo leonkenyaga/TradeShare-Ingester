@@ -8,7 +8,7 @@ function LinkAccountModule(){
    <ParentModule>
    <ConfigurePlatform />
    <ChildModule2>
-    Linking steps
+   <a href="https://app.metaapi.cloud/sign-up?subscription=default"> link</a>
    </ChildModule2>
    </ParentModule>
        
