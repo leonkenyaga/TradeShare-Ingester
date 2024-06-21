@@ -1,6 +1,5 @@
-import List from "./Components/list";
-import { Link ,Outlet } from "@tanstack/react-router";
-import Statusbar from "./statusbar";
+import List from "./Components/List/list";
+import { Outlet } from "@tanstack/react-router";
 
 function App() {
   return (

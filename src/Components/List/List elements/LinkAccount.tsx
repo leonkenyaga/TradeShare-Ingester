@@ -3,7 +3,7 @@ import * as React from 'react';
 import { PopupPlacement, Unstable_Popup as BasePopup } from '@mui/base/Unstable_Popup';
 
 
-function AddAccount(){
+function LinkAccount(){
     
     const [anchor, setAnchor] = React.useState<null | HTMLElement>(null);
 
@@ -28,7 +28,7 @@ function AddAccount(){
     )
 }
 
-export default AddAccount
+export default LinkAccount
 
 
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import Home from "./List elements/Home";
 import MyAccounts from "./List elements/MyAccounts";
-import AddAccount from "./List elements/AddAccount";
+import LinkAccount from "./List elements/LinkAccount";
 import Inbox from "./List elements/Inbox";
 import Following from "./List elements/Following";
 import Settings from "./List elements/Settings";
@@ -33,9 +33,9 @@ const defaultClass = "px-3 min-h-12 border-l-2 border-stone-900"
       <MyAccounts />
       </button> 
       </Link>
-      <Link to="/AddAccount">
-      <button  value="AddAccount" className= {selected === "AddAccount" ? selectedClass : defaultClass} onClick={(e)=>{setSelected(e.currentTarget.value)}}>
-      <AddAccount />
+      <Link to="/LinkAccount">
+      <button  value="LinkAccount" className= {selected === "LinkAccount" ? selectedClass : defaultClass} onClick={(e)=>{setSelected(e.currentTarget.value)}}>
+      <LinkAccount />
       </button> 
       </Link>
       <Link to="/Inbox">

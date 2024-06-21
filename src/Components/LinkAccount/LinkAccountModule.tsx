@@ -1,6 +1,6 @@
 import ConfigurePlatform from "./ConfigurePlatform";
-import { ParentModule } from "./MainModule";
-import { ChildModule2 } from "./MainModule";
+import { ParentModule } from "../MainModule";
+import { ChildModule2 } from "../MainModule";
 
 function LinkAccountModule(){
 
