@@ -1,5 +1,5 @@
 import { ChildModule1 } from "./MainModule"
-import metaIcon from "./assets/clipart2971503.png"
+import metaIcon from "../assets/clipart2971503.png"
 function ConfigurePlatform(){
     return (
         <ChildModule1>

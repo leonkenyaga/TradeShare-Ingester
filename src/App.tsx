@@ -1,4 +1,4 @@
-import List from "./list";
+import List from "./Components/list";
 import { Link ,Outlet } from "@tanstack/react-router";
 import Statusbar from "./statusbar";
 
