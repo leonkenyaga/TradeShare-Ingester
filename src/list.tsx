@@ -22,7 +22,7 @@ const defaultClass = "px-3 min-h-12 border-l-2 border-stone-900"
 
     return(
 
-      <div className="grid grid-rows-[1fr_1fr_1fr_1fr_1fr_6fr] min-w-12 bg-stone-900 border-r-2 border-TradeSharegray">
+      <div className="grid grid-rows-[1fr_1fr_1fr_1fr_1fr_6fr] min-w-12 bg-stone-900 border-r border-TradeSharegray">
       <Link to="/">
       <button  value="Home" className= {selected === "Home" ? selectedClass : defaultClass} onClick={(e)=>{setSelected(e.currentTarget.value)}}> 
      <Home />

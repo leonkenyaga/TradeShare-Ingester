@@ -12,7 +12,7 @@ function App() {
         </div>
       </div>
       <div className=" bg-blue-500">
-      <div className="h-full grid grid-cols-[1fr_34fr] border-t-2 border-TradeSharegray">
+      <div className="h-full grid grid-cols-[1fr_34fr] border-t border-TradeSharegray">
           <div className="bg-TradeShareblue min-w-16 px-2">
            Status:
           </div>
