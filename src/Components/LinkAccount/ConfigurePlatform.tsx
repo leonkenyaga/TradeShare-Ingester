@@ -1,5 +1,6 @@
 import { ChildModule1 } from "../MainModule";
 import metaIcon from "../../assets/clipart2971503.png";
+import { Link } from "@tanstack/react-router";
 function ConfigurePlatform() {
   return (
     <ChildModule1>
@@ -49,9 +50,12 @@ function ConfigurePlatform() {
               </div>
               <div className="relative">
                 {" "}
+                <Link to="/LinkAccount/Metatrader/"> 
                 <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300 absolute bottom-0 right-0">
-                  Continue
+                  Connect
                 </span>
+                </Link>
+               
               </div>
             </div>
           </div>
