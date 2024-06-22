@@ -1,16 +1,14 @@
 import ConfigurePlatform from "./ConfigurePlatform";
 import { ParentModule } from "../MainModule";
 import { ChildModule2 } from "../MainModule";
+import { Outlet } from "@tanstack/react-router";
 
 function LinkAccountModule() {
   return (
     <ParentModule>
       <ConfigurePlatform />
       <ChildModule2>
-        <a href="https://app.metaapi.cloud/sign-up?subscription=default">
-          {" "}
-          link
-        </a>
+      <Outlet />
       </ChildModule2>
     </ParentModule>
   );
